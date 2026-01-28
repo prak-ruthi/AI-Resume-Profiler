@@ -13,11 +13,10 @@ except ImportError:
 
 try:
     nlp = spacy.load("en_core_web_sm")
-except OSError:
-    # This command downloads the model directly into the environment
-    from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+except:
+    st.error("Run: python -m spacy download en_core_web_sm")
+    st.stop()
+
 
 # -------- Background (Login page only) --------
 def set_bg_image(image_path):
